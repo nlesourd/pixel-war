@@ -1,0 +1,92 @@
+/* Auteur du fichier Tenga  */
+
+:root {
+    --color-red: #ec1840;
+    --color-purple: #7a18ec;
+    --color-white: #fff;
+    --color-black-1: #111;
+    --color-black-2: #222;
+    --color-black-3: #444;
+    --speed-normal: 0.5s;
+    --speed-fast: 0.8s;
+}
+
+h2 {
+    text-align:center;
+    font-size: 8vh;
+    color: #fff;
+}
+
+* {
+    font-size:4vh;
+  }
+
+#creators {
+    justify-content: center;
+}
+
+#Tenga {
+    position:fixed;
+    top: 50%;
+    left: 30vh;
+}
+
+#Adrien {
+    position: fixed;
+    top: 50%;
+    left: 80vh;
+}
+
+#Nathan {
+    position: fixed;
+    top: 50%;
+    left: 130vh;
+}
+
+#Tenga, #Adrien, #Nathan {
+    width: 29vh;
+    height: 14vh;
+    margin: 3vh;
+    line-height: 7vh;
+    letter-spacing: 0.5vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;;
+    -webkit-text-fill-color: white;
+    color: #fff;
+    transition: var(--speed-normal);
+    animation: float 3s infinite alternate-reverse;
+    }
+
+    #Tenga:hover, #Adrien:hover, #Nathan:hover{
+        border: 1px solid transparent;
+        transition-delay: 0.8s;
+        background-size: 20vh;
+    }
+
+    .border-gradient {
+        border: 2vh solid;
+        border-image-slice: 1;
+        border-width: 0.7vh;
+    }
+
+    .border-gradient-gold {
+        border-image-source: linear-gradient(#FCF6BA, #B38728);
+    }
+
+    .border-gradient-blue {
+        border-image-source: linear-gradient(#F5F7F6, #5CA0F2);
+    }
+
+    .border-gradient-silver {
+        border-image-source: linear-gradient(#bcc6cc, #eee, #bcc6cc);
+    }
+  @keyframes float {
+    0%{transform: translateY(-80%);transition: ease 2s;}
+    25%{transform: translateY(160%);transition: ease 2s;}
+    50%{transform: translateX(-80%);transition: ease 2s;}
+    75%{transform: translateX(80%);transition: ease 2s;}
+  }

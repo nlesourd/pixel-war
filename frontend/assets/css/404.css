@@ -1,0 +1,101 @@
+/* Auteur du fichier Tenga  */
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --color-red: #ec1840;
+    --color-purple: #7a18ec;
+    --color-white: #fff;
+    --color-black-1: #111;
+    --color-black-2: #222;
+    --color-black-3: #444;
+    --speed-normal: 0.5s;
+    --speed-fast: 0.8s;
+}
+
+#home {
+    width: 8vh;
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+  
+  }
+
+  .float-area{
+    height:5vh;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .floating-img{
+    transform: translateY(-10%);
+    animation: floater 1.5s infinite;
+    transition: ease 0.5s;
+  }
+
+  @keyframes floater {
+    0%{transform: translateY(-10%);transition: ease 0.5s;}
+    50%{transform: translateY(10%);transition: ease 0.5s;}
+  }
+
+h1 {
+    text-align: center;
+    background: -webkit-linear-gradient(rgb(211, 13, 230), rgb(147, 236, 217));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:14vh ;
+  }
+  
+  
+.background {
+width: 100%;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+    font-size: 2vh;
+}
+
+
+@keyframes shoot {
+	0% { transform: translate(50vw, 50vh); }
+}
+@keyframes fade { to { opacity: 0 } }
+
+
+
+body {
+    margin: 0;
+}
+
+h2 {
+    text-align:center;
+    font-size: 7vh;
+    color: #fff;
+}
+
+h3 {
+    text-align:center;
+    font-size: 12vh;
+    background-color: #ec1840;
+    margin-top: 8%;
+}
+
+#redirect, #here{
+    font-size: 4vh;
+    color: #fff;
+}

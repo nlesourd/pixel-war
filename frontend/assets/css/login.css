@@ -1,0 +1,164 @@
+/* Auteur du fichier Tenga  */
+
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+:root {
+    --color-red: #ec1840;
+    --color-purple: #7a18ec;
+    --color-white: #fff;
+    --color-black-1: #111;
+    --color-black-2: #222;
+    --color-black-3: #444;
+    --speed-normal: 0.5s;
+    --speed-fast: 0.8s;
+}
+
+* {
+    font-size:2vh;
+}
+
+h2 {
+    color:#fff;
+}
+
+#text-center{
+	color:#fff;	
+	text-transform:uppercase;
+    font-size: 3vh;
+    margin: -5vh 0 9vh 0;
+    display: block;
+    text-align: center;
+}
+
+#wrong{
+    color:rgb(143, 34, 34);
+}
+
+#logout{
+  position: relative;
+  width: 14vh;
+  height: 6vh;
+  margin: 2vh;
+  line-height: 6vh;
+  letter-spacing: 0.4vh;
+    text-decoration: none;
+    text-transform: lowercase;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    
+    -webkit-text-fill-color: white;
+    color: #fff;
+    transition: var(--speed-normal);
+}
+
+  .logout{
+    font-size: 2vh;
+  }
+
+#logout:hover{
+    border: 1px solid transparent;
+    transition-delay: 0.8s;
+    background-size: 180px;
+    animation: animate var(--speed-fast) steps(8) forwards;
+}
+
+#logout {
+    border: 1px solid var(--color-purple);
+    position:fixed;
+    top:5vh;
+    right:5vh;
+  }
+
+  #logout:hover {
+    background: var(--color-purple) url(https://i.postimg.cc/FzBWFtKM/pixel2.png); 
+  }
+  
+  @keyframes animate {
+    0% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: -480px;
+    }
+}  
+
+/* Boîte Login */
+#box{
+	position:fixed;
+	left:50%;
+	top:60vh;
+	transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.89);
+	border-radius:3px;
+	padding:8vh 11vh;
+}
+
+#input{
+	position:relative;
+	margin-bottom:3vh;
+}
+
+#input label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:2vh;
+	color:#fff;	
+    pointer-event:none;
+	transition: all 0.5s ease-in-out;
+}
+#input input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:1.5vh 0 1vh 0;
+  font-size:2vh;
+  color:#fff;
+}
+#input input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+
+#btnSubmit{
+	color:#fff;
+	background-color:#4d00ca;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:2vh 3vh;
+	text-transform:uppercase;
+	margin-top:6vh;
+	border-radius:1vh;
+	cursor:pointer;
+	position:relative;
+    left: 25%;
+    
+}
+
+#input input:focus ~ label,
+#input input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+
+#btnSignUp {
+  color:#fff;
+	background-color:#4d00ca;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:2vh 3vh;
+	text-transform:uppercase;
+	margin-top:6vh;
+	border-radius:1vh;
+	cursor:pointer;
+  position:relative;
+    left:49%;
+    transform: translate(-50%,-50%);
+}

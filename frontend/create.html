@@ -1,0 +1,150 @@
+<!-- Auteur du fichier Nathan/Tenga/Adrien -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Super Pixel Game!</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/common.css" rel="stylesheet">
+  <link href="/assets/css/create.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a style="text-decoration:none" href="/index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+                <h1>Super Pixel Game!</h1>
+            </a>
+        </div>
+
+        <script src="/assets/js/jquery.min.js"></script>
+
+        <div class="float-area">
+          <a href="/" ><img id="home" src="/assets/img/home.png" class="floating-img"></a>
+        </div>
+    </header><!-- End Header -->
+
+
+    <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- <h2> Create a canva </h2> -->
+        </div>
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+
+
+        <!-- ======= Sign up Section ======= -->
+    <section id="create" class="create">
+
+      <span id="text-center" class="text-center">Create your canva</span>
+
+        <div class="container" >
+            <form action="/canva/create" method="post" role="form" class="php-email-form p-3 ">
+                <div id ="input" class="input-container form-group">
+                    <input type="text" name="nom" class="form-control" pattern="[a-zA-ZÀ-ÿ]*" id="nom" required>
+                    <label>Name</label>
+                </div>
+
+                <div id ="input" class="input-container form-group">
+                    <input type="text" class="form-control" name="theme" id="theme" required disabled>
+                    <label>Theme</label>
+                </div>
+
+                <div id ="input" class="form-group">
+                    <input type="number" class="form-control" name="width" min="2" id="width" placeholder="Width" required disabled>
+                </div>
+
+                <div id ="input" class="form-group">
+                    <input type="number" class="form-control" name="height" min="2" id="height" placeholder="Height" required disabled>
+                </div>
+            
+                <div class="text-center"><button type="submit" id="button">Validate</button></div>
+            </form>
+        <!--End Contact Form -->
+        </div>
+    </section><!-- End Sign up Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+    </footer><!-- End Footer -->
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+<foot>
+  <script>
+    $("#nom").keyup(function(){
+      let data = {nom: $("#nom").val()}
+      $.post("/canva/create/available", data, function(received, status, xhr){
+        if (status=="error"){
+          alert(error)
+        }
+        else {
+          if (received === "OK vip"){
+            $("#theme").prop("disabled", false)
+            $("#width").prop("disabled", false)
+            $("#height").prop("disabled", false)
+            $("#button").prop("disabled", false)
+            $("#nameUse").remove()
+          } else{
+            if(received === "OK normal"){
+              $("#theme").prop("disabled", false)
+              $("#width").prop("disabled", true)
+              $("#height").prop("disabled", true)
+              $("#button").prop("disabled", false)
+              $("#nameUse").remove()
+            }else{
+              $("#theme").prop("disabled", true)
+              $("#width").prop("disabled", true)
+              $("#height").prop("disabled", true)
+              $("#button").prop("disabled", true)
+              $("#nameUse").remove()
+              if (received === "OK undefined"){
+                $("#nom").after('<div id="nameUse"> You must be logged to create a canva </div>')
+              }
+              else{
+                $("#nom").after('<div id="nameUse"> Name already used </div>')
+              }
+            }
+          }
+        }
+      })
+    })
+  </script>
+</foot>
+
+</html>

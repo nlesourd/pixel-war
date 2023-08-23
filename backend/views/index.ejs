@@ -1,0 +1,115 @@
+<!-- Auteur du fichier Tenga -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Super Pixel Game!</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="container d-flex align-items-center justify-content-between">
+        <h1 id="title" onclick="playSound()"> Super Pixel Game! </h1>
+    </div>
+
+    <div class="float-area">
+      <a href="/" ><img id="home" src="assets/img/home.png" class="floating-img"></a>
+    </div>
+    
+  </header><!-- End Header -->
+
+
+  
+
+  <audio id="myAudio">
+    <source src="/assets/sound/SUPER.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playSound() {
+      var audio = document.getElementById("myAudio");
+      audio.play();
+    }
+  </script>
+  
+  <main id="main">
+    <% if (!logged) { %>
+      <div id="login" class="login" >
+        <a style="text-decoration:none" href="/login" class="login">Login</a>
+      </div>
+    <% } else{ %>
+      <div id="logout" class="logout" >
+        <a style="text-decoration:none" href="/logout" class="logout">Save & Logout</a>
+      </div>
+
+      <div id="create" class="create_canva" >
+        <a style="text-decoration:none" href="/canva/create" class="create_canva">Create a canva</a>
+      </div>
+    <% } %>
+
+    
+
+    <div id="join" class="join_canva" >
+      <a style="text-decoration:none" href="/canva/join" class="join_canva">Join a canva</a>
+    </div>
+
+    <div id="pixelbox1" class="aboutus">
+      <a style="text-decoration:none" href="/aboutus.html" class="aboutus">about us</a>
+    </div>
+
+    <!-- Auteur de l'ejs Nathan -->
+
+    <% if (logged){ %>
+      <section id="stat_user">
+        <h2 id="title"> Statistics of <%= login %> </h2>
+        <div> Status : <%= statutU%> </div>
+        <div> Number of canvas created : <%= nbCanvaCreeU %> </div>
+        <div> Number of pixels placed : <%= nbTotalPixelPoseU %> </div>
+      </section>
+    <% } %>
+
+    <section id="stat_global">
+      <h2 id="title"> Global statistics </h2>
+      <div id="statsUser"> Number of users registered on the site : <%= nbUtilisateurSite%> </div>
+      <div id="statsCanva"> Number of canvas available on the site : <%= nbCanvaSite%> </div>
+    </section>
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+
+  </footer><!-- End Footer -->
+  
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+
+</body>
+
+</html>

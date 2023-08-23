@@ -1,0 +1,80 @@
+<!-- Auteur du fichier Tenga -->
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <!-- la balise viewport permet de définir les dimensions d'une page web (la partie visible par l'utilisateur)-->
+        <meta charset="UTF-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Super Pixel Game!</title>
+        <link href="/assets/img/favicon.png" rel="icon">
+        <!-- on importe une police de Google Font API qui est un service web qui offre des polices open source utilisable pour le web design facilement-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--Le stylesheet-->
+        <link rel="stylesheet" href="/assets/css/canva.css" />
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <script src="/assets/js/jquery.min.js"></script>
+    </head>
+    
+    <body>
+
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+
+        <header>
+
+            <div class="float-area">
+                <a href="/" ><img id="home" src="/assets/img/home.png" class="floating-img"></a>
+            </div>
+
+            <a style="text-decoration:none" href="/">
+                <h1 id="menu">Super Pixel Game!</h1>
+            </a>
+        </header>
+
+        <h2 id="title"> <%= name %> </h2>
+
+        <div id="curseur"></div>
+
+        <canvas id="SUPER"></canvas>
+
+
+        <input id="colorbar" type="color"/>
+        
+        <% if (logged){ %>
+            <div id="time"> Time left before you can put a new pixel: <p id="timer"></p></div>
+        <% }else{ %>
+            <div id="invite"> You must be logged to put pixels! You can go to the login section!</div>
+            <div class="overlay"></div>
+        <% } %> 
+
+        <div id="couleurs"></div>
+        
+    </body>
+<!-- Auteur du script Adrien -->
+    <foot>
+        <!--sauvegarder les pixels pour le chargement de la page-->
+        <script> let matrice = []</script>
+        
+        <% pixels.forEach(pixel =>{ %> 
+            <script> 
+                matrice.push(<%= pixel.ligne %>)
+                matrice.push(<%= pixel.colonne %>)
+                matrice.push(<%= pixel.red %>)
+                matrice.push(<%= pixel.green %>)
+                matrice.push(<%= pixel.blue %>)
+            </script>
+        <% }); %>
+        
+        <script> 
+            let width = <%= width %>;
+            let height = <%= height %>;
+            let duree = <%= duree %>;
+            let login = "<%= login %>";
+            let name = "<%= name %>";
+        </script>
+
+        <script src="/assets/js/script_canva.js"></script>
+    </foot>
+
+</html>

@@ -1,0 +1,24 @@
+/* Auteur du fichier Tenga  */
+
+* {
+    font-size:4vh;
+    color: white;
+    text-align: center;
+}
+
+#canvas {
+    font-size:3vh;
+}
+
+ul {
+    list-style:none;
+   }
+
+ul li::before {
+    content: "\2022"; 
+    color: rgb(251, 179, 253);
+    font-weight: bold; 
+    display: inline-block;
+    width: 1vh; 
+    margin-left: -1vh; 
+}

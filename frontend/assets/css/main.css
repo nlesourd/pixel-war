@@ -1,0 +1,159 @@
+/* Auteur du fichier Tenga  */
+
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+:root {
+    --color-red: #ec1840;
+    --color-purple: #7a18ec;
+    --color-white: #fff;
+    --color-pink: rgb(236, 124, 231);
+    --color-blue: rgb(101, 198, 255);
+    --color-black-1: #111;
+    --color-black-2: #222;
+    --color-black-3: #444;
+    --speed-normal: 0.5s;
+    --speed-fast: 0.8s;
+}
+
+* {
+  font-size:4vh;
+}
+
+
+
+#stat_global{
+  color:rgb(255, 255, 255);
+  position:fixed;
+  top: 30vh;
+  left: 100vh;
+}
+
+#stat_user {
+  color:rgb(255, 255, 255);
+  position:fixed;
+  top:  50vh;
+  left: 100vh;
+}
+
+
+#create, #join{
+    position: relative;
+    width: 30vh;
+    height: 15vh;
+    margin: 2vh;
+    line-height: 6vh;
+    letter-spacing: 0.4vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    
+    -webkit-text-fill-color: white;
+    color: #fff;
+    transition: var(--speed-normal);
+
+}
+
+#login, #logout, #pixelbox1{
+    position: relative;
+    width: 14vh;
+    height: 6vh;
+    margin: 2vh;
+    line-height: 6vh;
+    letter-spacing: 0.4vh;
+    text-decoration: none;
+    text-transform: lowercase;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    
+    -webkit-text-fill-color: white;
+    color: #fff;
+    transition: var(--speed-normal);
+}
+
+  .login, .logout, .aboutus{
+    font-size: 2vh;
+  }
+
+#pixelbox1:hover, #login:hover, #create:hover, #join:hover, #logout:hover{
+    border: 1px solid transparent;
+    transition-delay: 0.8s;
+    background-size: 180px;
+    animation: animate var(--speed-fast) steps(8) forwards;
+}
+
+/* couleur bouton */
+#pixelbox1 {
+  border: 1px solid var(--color-red);
+  position:fixed;
+  bottom:5%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+#login {
+  border: 1px solid var(--color-purple);
+  position:fixed;
+  top:7%;
+  right:4%;
+  transform: translate(-50%,-50%);
+}
+
+#logout {
+  border: 1px solid var(--color-purple);
+  position:fixed;
+  width: 20vh;
+  height: 6vh;
+  top:7%;
+  right:4%;
+  transform: translate(-50%,-50%);
+}
+
+#create {
+  border: 1px solid var(--color-blue);
+  position:fixed;
+  top: 35%;
+  left: 25%;
+  transform: translate(-50%,-50%);
+}
+
+#join {
+  border: 1px solid var(--color-pink);
+  position:fixed;
+  top: 60%;
+  left: 25%;
+  transform: translate(-50%,-50%);
+}
+
+#pixelbox1:hover {
+  background: var(--color-red) url(https://i.postimg.cc/wBXGXbWN/pixel.png); 
+}
+
+#login:hover {
+  background: var(--color-purple) url(https://i.postimg.cc/FzBWFtKM/pixel2.png); 
+}
+
+#logout:hover {
+  background: var(--color-purple) url(https://i.postimg.cc/FzBWFtKM/pixel2.png); 
+}
+
+#create:hover {
+  background: var(--color-blue) url(./../img/pixel_blue.png); 
+}
+
+#join:hover {
+  background: var(--color-pink) url(./../img/pixel_pink.png); 
+}
+
+@keyframes animate {
+    0% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: -480px;
+    }
+}

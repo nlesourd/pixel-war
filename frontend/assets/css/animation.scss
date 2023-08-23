@@ -1,0 +1,27 @@
+/* Auteur du fichier Tenga  */
+
+$d: 4px;
+
+.particle {
+	position: absolute;
+	width: $d; height: $d;
+	animation: shoot 3s ease-out infinite;
+	animation-name: shoot, fade;
+	
+	@for $i from 0 to 400 {
+		$t: (1 + .01*random(100))*1s;
+		
+		&:nth-child(#{$i + 1}) {
+			transform: translate(random(100)*1vw, 
+													 random(100)*1vh);
+			background: hsl(random(360), 100%, 100%);
+			animation-duration: $t;
+			animation-delay: -.01*random(100)*$t;
+		}
+	}
+}
+
+@keyframes shoot {
+	0% { transform: translate(50vw, 50vh); }
+}
+@keyframes fade { to { opacity: 0 } }

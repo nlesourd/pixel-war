@@ -1,0 +1,87 @@
+<!-- Auteur du fichier Adrien -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Super Pixel Game!</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/common.css" rel="stylesheet">
+  <link href="/assets/css/join.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a style="text-decoration:none" href="/index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <h1>Super Pixel Game!</h1>
+      </a>
+    </div>
+
+    <div class="float-area">
+      <a href="/" ><img id="home" src="/assets/img/home.png" class="floating-img"></a>
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    
+      <% if (typeof(themes) != "undefined"){ %>
+        <ol>
+          <% themes.forEach(theme => { %>
+            <div class="col-lg-4 menu-item">
+                <li>
+                  <%= theme.theme; %>
+                  <ul>
+                    <% canvas.forEach(name =>{ %>
+                    <% if (name.theme == theme.theme){ %>
+                      <li id="list">
+                        <a id="canvas" href="/canva/join/nom/<%= name.nom %>">
+                          <%= name.nom; %> (<%= name.largeur; %>x<%= name.longueur; %>)
+                        </a>
+                        <% } %>
+                      </li>
+                    <% }); %>
+                  </ul>
+                <br>
+                </li>
+                
+              </div><!-- Affichage des canvas -->
+          <% }); %>
+        </ol>
+      <% } else {%>
+        <div> There is no canva created yet! You can create one here: <a href="/canva/create"></a>.</div>
+      <% } %>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+  </footer><!-- End Footer -->
+  
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+</body>
+
+</html>

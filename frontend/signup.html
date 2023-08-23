@@ -1,0 +1,124 @@
+<!-- Auteur du fichier Tenga/Nathan -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Super Pixel Game!</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  
+  <!-- Template Main CSS File -->
+  <link href="assets/css/signup.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+  
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a style="text-decoration:none" href="/index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <h1>Super Pixel Game!</h1>
+      </a>
+
+
+
+    </div>
+
+    <div class="float-area">
+      <a href="/" ><img id="home" src="assets/img/home.png" class="floating-img"></a>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2> </h2>
+        </div>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+  
+	  <!-- ======= Sign up Section ======= -->
+    <section id="signup" class="signup">
+
+      <div id="box" class="box">
+        <form action="/signup" method="post" role="form" class="php-email-form p-3 ">
+          <span id="text-center" class="text-center">Sign up to create your free account</span>
+        
+          <div id="input" class="input-container form-group">
+            <input id="login" type="text" name="login" class="form-control" required/>
+            <label>Login</label>		
+          </div>
+
+          <div id="input" class="input-container form-group">		
+            <input id="password" type="password" name="password" class="form-control" required disabled>
+            <label>Password</label>
+          </div>
+
+          <button id="buttonSubmit" type="submit" class="btn" disabled>submit</button>
+        </form>	
+      </div>
+
+    </section><!-- End Sign up Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+  </footer><!-- End Footer -->
+  
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+</body>
+
+<foot>
+  <script>
+    $("#login").keyup(function(){
+      console.log("passe1")
+      let data = {login: $("#login").val()}
+      $.post("/signup/available", data, function(received, status, xhr){
+        if (status=="error"){
+          alert(error)
+        }
+        else {
+          if (received === "KO"){
+            $("#password").prop("disabled", true)
+            $("#buttonSubmit").prop("disabled", true)
+            $("#loginUse").remove()
+            $("#login").after('<div id="loginUse"> Login already used! </div>')
+          } else{
+            $("#password").prop("disabled", false)
+            $("#buttonSubmit").prop("disabled", false)
+            $("#loginUse").remove()
+          }
+        }
+      })
+    })
+  </script>
+</foot>
+
+</html>

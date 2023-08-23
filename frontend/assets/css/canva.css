@@ -1,0 +1,100 @@
+/* Auteur du fichier Tenga  */
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+canvas {
+  border: 1px solid white;
+}
+
+.overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  z-index: 9998;
+
+}
+
+h1 {
+  position: relative;
+  top:-4vh;
+  text-align: center;
+  background: -webkit-linear-gradient(rgb(211, 13, 230), rgb(147, 236, 217));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:14vh;
+  z-index: 9999;
+}
+
+#SUPER {
+  box-shadow: 1px 1px 10px -5px black;
+  margin-top: 15px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  cursor: none;
+}
+
+#colorbar{
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  background-color: transparent;
+  width: 6vh;
+  height: 6vh;
+  border-radius:3vh; 
+  border-width: 1vh;
+  border-color: #ddb662;
+  cursor:pointer;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 90%;
+  top: 50%;
+}
+
+#colorbar::-webkit-color-swatch{
+  border-radius: 2vh;
+  border: 0.5vh solid #fff;
+}
+
+#colorbar::-moz-color-swatch{
+  border-radius: 2vh;
+  border: 0.5vh solid #fff;
+}
+
+#couleurs {
+  position: fixed;
+  right:4vh;
+  top: 15vh;
+}
+
+#couleurs div {
+  height: 2.8vh;
+  width: 2.8vh;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  display:flex-block;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+#couleurs div:hover {
+  border-color: rgb(146, 146, 146);
+}
+
+#title, #time, #timer, #invite{
+  color:#fff;
+  font-size: 4vh;
+  text-align:center;
+  margin-top: 6vh;
+  margin-bottom: 4vh;
+}
+
+#invite{
+  z-index: 9999;
+}
